@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Nowshin ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+overflow:hidden;
+background:#000;
+color:white;
+}
+
+.page{
+width:100%;
+height:100vh;
+display:none;
+position:absolute;
+top:0;
+left:0;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:20px;
+}
+
+.active{
+display:flex;
+}
+
+button{
+padding:15px 30px;
+border:none;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+background:#ff4d6d;
+color:white;
+margin-top:20px;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.cover{
+background:url('cover.jpg') center center/cover;
+}
+
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+}
+
+.content{
+position:relative;
+z-index:2;
+}
+
+h1{
+font-size:3rem;
+margin-bottom:15px;
+}
+
+p{
+font-size:1.2rem;
+max-width:700px;
+line-height:1.8;
+}
+
+.heart{
+position:absolute;
+color:#ff4d6d;
+font-size:20px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+100%{
+transform:translateY(-100px);
+opacity:1;
+}
+}
+
+.countdown{
+font-size:2rem;
+margin-top:20px;
+}
+
+.cake{
+font-size:120px;
+cursor:pointer;
+}
+
+.flame{
+font-size:50px;
+animation:flicker .5s infinite alternate;
+}
+
+@keyframes flicker{
+from{transform:scale(1);}
+to{transform:scale(1.15);}
+}
+
+.gallery img{
+width:280px;
+border-radius:20px;
+margin:10px;
+box-shadow:0 0 15px rgba(255,255,255,.3);
+}
+
+.forever{
+background:url('hand.jpg') center center/cover;
+}
+
+.final-message{
+font-size:2rem;
+max-width:800px;
+}
+
+@media(max-width:768px){
+h1{
+font-size:2rem;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active cover" id="page1">
+<div class="overlay"></div>
+
+<div class="content">
+<h1>🎂 Happy Birthday Nowshin ❤️</h1>
+<p>From Your Remon 💖</p>
+<button onclick="nextPage(2)">Open My Surprise</button>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+
+<h1>⏳ Countdown To Your Special Day</h1>
+
+<div class="countdown" id="countdown"></div>
+
+<p>
+Every second brings us closer to your special day,
+my princess 👑❤️
+</p>
+
+<button onclick="nextPage(3)">Next ❤️</button>
+
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+
+<h1>❤️ To My Babe ❤️</h1>
+
+<p>
+My Pookie 🥺<br>
+My Wifey 💍<br>
+My Janu ❤️<br><br>
+
+I Love You More Than Words Can Explain.
+</p>
+
+<button onclick="nextPage(4)">Next 💕</button>
+
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+
+<h1>🎂 Make A Wish</h1>
+
+<div class="cake">🎂</div>
+
+<div class="flame" id="flame">🕯️</div>
+
+<p>Tap the candle and make a wish ❤️</p>
+
+<button onclick="blowCandle()">Blow Candle ✨</button>
+
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page5">
+
+<h1>💌 A Letter For You</h1>
+
+<p style="max-width:900px;overflow:auto;height:60vh;">
+Happy Birthday, my love ❤️🎂
+
+I hope you have the most beautiful birthday and an amazing day filled with happiness, love, and countless smiles.
+
+May God bless you with good health, endless joy, and all the success you deserve.
+
+Thank you for being such an incredible partner. The way you love, care for, and support me reminds me of the purest kind of love.
+
+You are not only my girlfriend but also my best friend, my comfort, my safe place, and my happiness.
+
+Every day with you feels like a blessing.
+
+Before you came into my life, I never knew someone could make me feel so loved and understood.
+
+You are my peace, my happiness, and my favorite person.
+
+I can't wait to create more memories with you, celebrate more birthdays together, and grow old holding your hand.
+
+I promise to hold your hand through every smile, every challenge, and every moment in between.
+
+Happy Birthday once again, my princess. ❤️👑
+
+Forever Yours,
+Remon ❤️
+</p>
+
+<button onclick="nextPage(6)">See Our Memories 📸</button>
+
+</div>
+
+<!-- PAGE 6 -->
+<div class="page gallery" id="page6">
+
+<h1>📸 Our Beautiful Memories</h1>
+
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+
+<button onclick="nextPage(7)">Final Surprise ❤️</button>
+
+</div>
+
+<!-- PAGE 7 -->
+<div class="page forever" id="page7">
+
+<div class="overlay"></div>
+
+<div class="content">
+
+<h1>❤️ Will You Stay With Me Forever? ❤️</h1>
+
+<button onclick="nextPage(8)">YES 💖</button>
+<button onclick="nextPage(8)">ABSOLUTELY YES 💖</button>
+
+</div>
+
+</div>
+
+<!-- PAGE 8 -->
+<div class="page" id="page8">
+
+<div class="final-message">
+❤️ I Love You Forever, Nowshin ❤️
+<br><br>
+Thank you for being the best thing that has ever happened to me.
+<br><br>
+Forever and Always,
+<br>
+Remon 💖
+</div>
+
+</div>
+
+<script>
+
+function nextPage(page){
+document.querySelectorAll('.page').forEach(p=>{
+p.classList.remove('active');
+});
+
+document.getElementById('page'+page).classList.add('active');
+}
+
+function blowCandle(){
+document.getElementById('flame').style.display='none';
+alert('🎉 Happy Birthday Nowshin ❤️ Make A Wish 🎂');
+setTimeout(()=>{
+nextPage(5);
+},1000);
+}
+
+function updateCountdown(){
+
+const birthday = new Date("June 19, 2026 00:00:00").getTime();
+
+const now = new Date().getTime();
+
+const distance = birthday - now;
+
+const days = Math.floor(distance/(1000*60*60*24));
+
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+
+const seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML =
+days+" Days "+
+hours+" Hours "+
+minutes+" Minutes "+
+seconds+" Seconds";
+
+}
+
+setInterval(updateCountdown,1000);
+
+for(let i=0;i<30;i++){
+
+let heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.animationDuration=
+(Math.random()*5+5)+"s";
+
+document.body.appendChild(heart);
+
+}
+</script>
+
+</body>
+</html>
